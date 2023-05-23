@@ -1,0 +1,13 @@
+@import "../../../../styles.scss";
+
+// background-color: mat-color($mat-palette-indigo, 700);
+//     color: mat-color($mat-palette-lime, 200);
+
+.footer {
+  background-color: mat-color($mat-purple, 700);
+  color: mat-color($mat-lime, 200);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
