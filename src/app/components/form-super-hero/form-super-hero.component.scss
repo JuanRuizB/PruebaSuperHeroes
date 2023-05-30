@@ -1,0 +1,44 @@
+@import "../../../styles.scss";
+
+.form {
+  // max-width: 400px;
+  margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide-in {
+  animation: slideInAnimation 0.5s forwards;
+}
+
+.error{
+  color: red
+}
+
+@keyframes slideInAnimation {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+button.mat-button-disabled {
+  opacity: 0.6; // Reduce la opacidad para suavizar los colores
+  // Estilos para el fondo del botón
+  background-color: rgba(
+    indigo,
+    0.6
+  ); // Utiliza la función mat-color() para obtener el color primary con una opacidad reducida
+
+  // Estilos para el texto del botón
+  color: rgba(
+    white,
+    0.6
+  ); // Utiliza la función mat-color() para obtener un tono más suave del color primary
+}

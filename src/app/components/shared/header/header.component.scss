@@ -1,12 +1,11 @@
-@import '../../../../styles.scss';
-// @import '~@angular/material/prebuilt-themes/purple-green.css';
-
+@import "src/styles.scss";
 
 .header {
-  background-color: mat-color($mat-purple, 700);
-    color: mat-color($mat-lime, 200);
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } 
+  background-color: indigo;
+  button{
+    margin: 0 10px 0 0;
+  }
+  mat-icon{
+    margin-right: 0;
+  }
+}

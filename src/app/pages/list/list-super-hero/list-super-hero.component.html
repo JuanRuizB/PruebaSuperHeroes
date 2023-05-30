@@ -1,0 +1,39 @@
+<div class="page-container">
+  <div class="container">
+    <div class="card-container">
+      <div class="image-list">
+        <mat-card *ngFor="let superhero of pagedSuperheroes" (click)="selectSuperHero(superhero)" class="image-card">
+          <img [src]="superhero.image" [alt]="superhero.name" class="image" />
+          <mat-card-content>
+            <h2 class="name">{{ superhero.name }}</h2>
+            <p class="info">Ciudad: {{ superhero.city }}</p>
+            <p class="info">Superpoder: {{ superhero.superpower }}</p>
+            <p class="info">Edad: {{ superhero.age }}</p>
+            <p class="info">Sexo: {{ superhero.gender }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="flex1">
+      <div class="fixed">
+        <div class="align-center">
+          <app-search-super-hero class="flex1" (searchList)="searchList($event)"></app-search-super-hero>
+          <button mat-fab color="accent" (click)="addSuperHero()" class="marginLeft20 marginRigth20">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+
+        <div class="flex  marginRigth20 marginForm">
+          <app-form-super-hero (updateAction)="updateAction()" (updateListSuperHero)="updateListSuperHero()" [action]="action" [superHeroSelected]="superHeroSelected"></app-form-super-hero>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-paginator
+    [length]="superheroes.length"
+    [pageSizeOptions]="[10, 15, 20]"
+    (page)="onPageChange($event)"
+  ></mat-paginator>
+</div>

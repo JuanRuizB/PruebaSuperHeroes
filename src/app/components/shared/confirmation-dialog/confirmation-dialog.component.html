@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Confirmar borrado</h1>
+<div mat-dialog-content>
+  <span> ¿Está seguro de que desea borrar este elemento? </span>
+</div>
+<div mat-dialog-actions class="dialog-buttons">
+  <button mat-button (click)="closeDialog()">Cancelar</button>
+  <button mat-button color="warn" (click)="confirmDelete()">Borrar</button>
+</div>

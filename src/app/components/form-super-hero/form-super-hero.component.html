@@ -1,0 +1,72 @@
+<form class="form" [formGroup]="superHeroForm" [class.slide-in]="isComponentVisible">
+  <mat-form-field class="width100">
+    <input
+      matInput
+      placeholder="Nombre*"
+      formControlName="name"
+      name="name"
+      required
+    />
+    <div class="error" *ngIf="superHeroForm!.get('name')!.invalid && superHeroForm!.get('name')!.touched">
+        El nombre es requerido.
+      </div>
+  </mat-form-field>
+
+  <mat-form-field class="width100">
+    <input
+      matInput
+      placeholder="Ciudad*"
+      formControlName="city"
+      name="city"
+      required
+    />
+    <div class="error" *ngIf="superHeroForm!.get('city')!.invalid && superHeroForm!.get('city')!.touched">
+        La ciudad es requerida.
+      </div>
+  </mat-form-field>
+
+  <mat-form-field class="width100">
+    <input
+      matInput
+      placeholder="SuperPoder*"
+      formControlName="superpower"
+      name="superpower"
+      required
+    />
+    <div class="error" *ngIf="superHeroForm!.get('age')!.invalid && superHeroForm!.get('age')!.touched">
+        La edad es requerida.
+      </div>
+  </mat-form-field>
+
+  <mat-form-field class="width100">
+    <input
+      matInput
+      type="number"
+      placeholder="Edad*"
+      formControlName="age"
+      name="age"
+      required
+    />
+    <div class="error" *ngIf="superHeroForm!.get('superpower')!.invalid && superHeroForm!.get('superpower')!.touched">
+        El superpoder es requerido.
+      </div>
+  </mat-form-field>
+
+  <mat-form-field class="width100">
+    <mat-label>Sexo</mat-label>
+    <mat-select formControlName="gender" name="gender" required>
+      <mat-option value="Hombre">Hombre</mat-option>
+      <mat-option value="Mujer">Mujer</mat-option>
+      <mat-option value="Otro">Otro</mat-option>
+    </mat-select>
+    <div class="error" *ngIf="superHeroForm!.get('gender')!.invalid && superHeroForm!.get('gender')!.touched">
+        El sexo es requerido.
+      </div>
+  </mat-form-field>
+
+  <div style="display: flex; justify-content: space-between;">
+      <button mat-raised-button color="accent" (click)="closeForm()">Cerrar</button>
+      <button mat-raised-button color="warn" *ngIf="superHeroSelected != undefined" (click)="openConfirmationDialog()">Borrar</button>
+      <button mat-raised-button color="primary" [disabled]="superHeroForm!!.invalid" [ngClass]="{'mat-button-disabled': superHeroForm!!.invalid}" (click)="onSubmit()" >Guardar</button>
+    </div>
+</form>

@@ -1,3 +1,9 @@
-<header class="header" color="primary">
-  <h1>{{ title }}</h1>
-</header>
+<mat-toolbar class="header">
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Lista</button>
+  </mat-menu>
+  <span>{{ title }}</span>
+</mat-toolbar>

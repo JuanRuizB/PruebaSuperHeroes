@@ -1,0 +1,77 @@
+@import '../../../../styles.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  @include flex-1;
+  flex-direction: row;
+}
+
+.card-container {
+  @include flex-align-center;
+  height: 100%;
+  flex-direction: column;
+  padding: 2% 0 2% 3%;
+  flex: 2;
+}
+
+.image-list {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  @include flex-1;
+  height: 100%;
+}
+
+.image-card {
+  width: 300px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  margin: 20px;
+  height: fit-content;
+  background-color: gainsboro;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.name {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.info {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.page-container {
+  @include flex-1;
+  flex-direction: column;
+}
+
+.marginForm{
+  margin-top: 100px;
+  margin-bottom: 0;
+}
+
+
+
+
+
+
